@@ -35,6 +35,9 @@ func New(name string, age int) *Student {
 //	   	score	: 分数
 //	返回值:
 func (s *Student) AddScore(subject string, score int) {
+	if s.Score == nil {
+		s.Score = make(map[string]int)
+	}
 	s.Score[subject] = score
 	strings.Replace("hello", "h", "H", 1)
 }
